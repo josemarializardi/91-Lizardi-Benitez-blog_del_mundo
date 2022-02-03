@@ -3,8 +3,9 @@ body{
     color: #ffebcd;
 }
 article{
-    background-color: rgb(44, 43, 43)
-    ;
+    background-color: rgb(44, 43, 43);
+    padding: 1.5rem;
+    border-bottom: #FFFFFF 1px solid;
 }
 .resaltado{
     color: yellow;
@@ -12,4 +13,7 @@ article{
 #título_del_blog{
     text-align: center;
     font-size: 3rem;
+}
+.ilustración{
+    border: white 4px solid;
 }
