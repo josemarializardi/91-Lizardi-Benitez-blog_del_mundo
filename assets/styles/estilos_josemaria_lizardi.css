@@ -27,12 +27,18 @@ nav>ul>li{
 
 nav>ul>li>a{
     text-decoration: none;
+    color:#fff;
 }
 /* Fin barra de navegación */
 
 /* Footer del blog */
 #footer_del_blog{
     margin: 2rem;
+    display: flex;
+    text-align: center;
+    padding: 4rem 0 4rem 0;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
 }
 /* Fin footer del blog */
 
@@ -75,11 +81,67 @@ section>main{
 }
 
 section>aside{
-    /* esta sección se extenderá 4 columnas. */
+    /* Esta sección se extenderá 4 columnas. */
     grid-column: span 4;
 }
 
 section>footer{
-    /* esta sección se extenderá 12 columnas. */
+    /* Esta sección se extenderá 12 columnas. */
     grid-column: span 12;
+}
+
+nav{
+    font-size: 1.3rem;
+}
+
+nav>ul>li>a:hover{
+    text-decoration: underline;
+    color: greenyellow;
+}
+
+nav>ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 0.5rem;
+}
+
+article>header>hgroup{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+article>header>hgroup>h2{
+    display: flex;
+    text-align: center;
+}
+
+article>header>hgroup>h2>img{
+    margin-right: 1rem;
+}
+
+#footer_del_blog div:nth-child(2){
+    font-size: 0.9rem;
+}
+
+aside>h2{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+aside div:nth-of-type(even){
+    background-color: rgb(44, 43, 43);
+}
+
+aside div img{
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+aside div {
+    display: flex;
+    align-items: center;
 }
