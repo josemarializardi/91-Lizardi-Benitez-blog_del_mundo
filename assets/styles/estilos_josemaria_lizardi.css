@@ -144,4 +144,5 @@ aside div img{
 aside div {
     display: flex;
     align-items: center;
+    border-bottom-style: dashed;
 }
