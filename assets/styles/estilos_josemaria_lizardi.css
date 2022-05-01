@@ -1,59 +1,8 @@
-/* Clases generales*/
 body{
     background-color: black;
-    color: #ffebcd;
+    color: #fff;
+    margin: 0;
 }
-
-article{
-    background-color: rgb(44, 43, 43);
-    padding: 1.5rem;
-    border-bottom: #FFFFFF 1px solid;
-}
-
-#título_del_blog{
-    text-align: center;
-    font-size: 3rem;
-}
-/* Termina clases generales*/
-
-/* Barra de navegación*/
-.resaltado{
-    color: yellow;
-}
-
-nav>ul>li{
-    list-style: none;
-}
-
-nav>ul>li>a{
-    text-decoration: none;
-    color:#fff;
-}
-/* Fin barra de navegación */
-
-/* Footer del blog */
-#footer_del_blog{
-    margin: 2rem;
-    display: flex;
-    text-align: center;
-    padding: 4rem 0 4rem 0;
-    justify-content: space-evenly;
-    font-size: 1.3rem;
-}
-/* Fin footer del blog */
-
-/* Ilustraciones */
-.ilustración{
-    border: white 4px solid;
-    display: inline-block;
-}
-
-.ilustración_figcaption{
-    margin-top: 1rem;
-    margin-left: 1rem;
-    font-style: italic;
-}
-/* Fin ilustraciones */
 
 /* Grid */
 section{
@@ -66,8 +15,18 @@ section{
     grid-auto-rows: auto;
     /* Añade un espacio entre los elementos del grid de 3rem */
     gap: 3rem;
+    margin: 0 1rem;
 }
-/* Termina grid */
+
+main{
+    grid-column: span 12;
+}
+
+@media (min-width: 1024.1px){
+    main{
+        grid-column: span 8;
+    }
+}
 
 /* Apunta sólo a los header que son hijos directos de section */
 section>header{
@@ -75,74 +34,170 @@ section>header{
     grid-column: span 12;
 }
 
-section>main{
-    /* Esta sección se extenderá 8 columnas. */
-    grid-column: span 8;
-}
-
-section>aside{
-    /* Esta sección se extenderá 4 columnas. */
-    grid-column: span 4;
-}
-
-section>footer{
-    /* Esta sección se extenderá 12 columnas. */
+aside{
     grid-column: span 12;
 }
 
+@media (min-width: 1024.1px){
+    aside{
+        /* Esta sección se extenderá 4 columnas. */
+        grid-column: span 4;
+    }
+}
+
+footer{
+    /* Esta sección se extenderá 12 columnas. */
+    grid-column: span 12;
+}
+/* Termina grid */
+
+/* Articles */
+article{
+    background-color: rgb(44, 43, 43);
+    padding: 1.5rem;
+    border-bottom: #fff 1px solid;
+}
+
+article>header>hgroup{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+article>header>hgroup>h2{
+    display: flex;
+    align-items: center;
+}
+
+article>header>hgroup>h2>img{
+    margin-right: 1rem;
+}
+/* Fin articles */
+
+#título_del_blog{
+    text-align: center;
+    font-size: clamp(2rem, calc(1vw + 2rem), 7rem);
+    padding-top: 4.5rem;
+}
+
+/* Barra de navegación*/
 nav{
     font-size: 1.3rem;
+    position: fixed;
+    width: 100%;
+    background-color: #000;
+}
+
+/* Desde 0 hasta 1099px compórtate así: */
+nav>ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 1rem;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 1.5rem;
+}
+
+/* Pantallas grandes de 1100px en adelante compórtate así: */
+@media (min-width: 1100px){
+    nav>ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 1px solid red;
+        padding-bottom: 0.5rem;
+    }
+}
+/* Fin pantallas grandes */
+
+.resaltado{
+    color: yellow;
+}
+
+nav>ul>li{
+    list-style: none;
+}
+
+nav>ul>li>a{
+    text-decoration: none;
+    color:#fff;
 }
 
 nav>ul>li>a:hover{
     text-decoration: underline;
     color: greenyellow;
 }
+/* Fin barra de navegación */
 
-nav>ul{
+/* Footer del blog */
+@media (max-width: 1024.1px){
+    #footer_del_blog{
+        flex-direction: column;
+    }
+}
+
+#footer_del_blog{
+    margin: 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 0.5rem;
-}
-
-article>header>hgroup{
-    display: flex;
-    text-align: center;
+    padding: 4rem 0 4rem 0;
     justify-content: space-between;
-}
-
-article>header>hgroup>h2{
-    display: flex;
-    text-align: center;
-}
-
-article>header>hgroup>h2>img{
-    margin-right: 1rem;
+    font-size: 1.3rem;
 }
 
 #footer_del_blog div:nth-child(2){
     font-size: 0.9rem;
 }
+/* Fin footer del blog */
 
+/* Ilustraciones */
+.ilustración{
+    border: #fff 4px solid;
+    display: inline-block;
+}
+
+.ilustración_figcaption{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-style: italic;
+}
+/* Fin ilustraciones */
+
+/* Aside */
 aside>h2{
     text-align: center;
     font-size: 1.3rem;
 }
 
-aside div:nth-of-type(even){
-    background-color: rgb(44, 43, 43);
+aside div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0.6rem;
+    border-bottom: 1px dashed #fff;
 }
+
+/* Si la pantalla mide mínimo 1024.1 px y máximo 1324.1 entonces... */
+@media (min-width: 1024.1px) and (max-width: 1324.1px){
+    aside div {
+         /* Despliega los elementos de microblogging uno encima del otra */
+        flex-direction: column;
+    }
+}
+/* End media */
 
 aside div img{
     background-color: #fff;
     padding: 0.5rem;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
-aside div {
-    display: flex;
-    align-items: center;
-    border-bottom-style: dashed;
+aside div:nth-child(2n){
+    background-color: rgb(44, 43, 43);
 }
+/* Fin aside */
